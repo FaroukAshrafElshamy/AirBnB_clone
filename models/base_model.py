@@ -25,7 +25,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
+            models.st.new(self)
 
     def __str__(self):
         """ str dunder method, when print BaseModel """
@@ -35,7 +35,7 @@ class BaseModel:
     def save(self):
         """ Save method, it updates time and save it into storage """
         self.updated_at = datetime.now()
-        models.storage.save()
+        models.st.save()
 
     def to_dict(self):
         """It returns a dictionary"""
